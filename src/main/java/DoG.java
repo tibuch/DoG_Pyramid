@@ -11,11 +11,12 @@ import net.imagej.ops.OpService;
 import net.imagej.ops.convert.RealTypeConverter;
 import net.imglib2.RandomAccessibleInterval;
 import net.imglib2.img.Img;
+import net.imglib2.img.ImgView;
 import net.imglib2.type.numeric.RealType;
 import net.imglib2.type.numeric.real.FloatType;
 import net.imglib2.view.Views;
 
-@Plugin(type = Command.class, menuPath = "Experiments>Blob Detection>DoG Pyramid")
+@Plugin(type = Command.class, headless=true, menuPath = "Experiments>Blob Detection>DoG Pyramid")
 public class DoG<T extends RealType<T>> implements Command {
 
 	@Parameter
@@ -37,7 +38,7 @@ public class DoG<T extends RealType<T>> implements Command {
 	private int levels = 5;
 
 	@Parameter(type = ItemIO.OUTPUT)
-	private RandomAccessibleInterval<T> output;
+	private Img<T> output;
 
 	@Override
 	public void run() {
@@ -65,7 +66,7 @@ public class DoG<T extends RealType<T>> implements Command {
 			s2 = s1 * factor;
 		}
 
-		output = Views.stack(dog);
+		output = ImgView.wrap( Views.stack(dog), image.factory() );
 	}
 
 }
