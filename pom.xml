@@ -2,17 +2,17 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	
+
 	<parent>
 		<groupId>org.scijava</groupId>
 		<artifactId>pom-scijava</artifactId>
 		<version>26.0.0</version>
 	</parent>
-	
+
 	<groupId>experiment</groupId>
 	<artifactId>DoG_Pyramid</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	
+
 	<name>Blob-Detection</name>
 	<description>2D blob detection with difference of gaussian (DoG).</description>
 	<url>https://github.com/tibuch/blob-detection</url>
@@ -67,7 +67,8 @@
 		<main-class>Main</main-class>
 		<license.licenseName>cc0</license.licenseName>
 		<license.copyrightOwners>N/A</license.copyrightOwners>
-		<license.projectName>ImageJ software for multidimensional image processing and analysis.</license.projectName>
+		<license.projectName>ImageJ software for multidimensional image
+			processing and analysis.</license.projectName>
 		<imglib2.version>5.8.0</imglib2.version>
 	</properties>
 
@@ -82,11 +83,6 @@
 		<dependency>
 			<groupId>net.imagej</groupId>
 			<artifactId>imagej</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>sc.fiji</groupId>
-			<artifactId>simplified-io</artifactId>
-			<version>1.0.1</version>
 		</dependency>
 	</dependencies>
 </project>
